@@ -1,0 +1,177 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #727070; /* Fondo gris oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/*<!--AJFM-->*/
+/* Contenedor Principal */
+.auth-container {
+    display: flex;
+    background: rgb(198, 198, 198);
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    position: relative; /* Para manejar la posición de la imagen */
+}
+
+/* Sección izquierda */
+.auth-container__left {
+    background: #007bff;
+    color: rgb(255, 253, 253);
+    padding: 40px 80px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 30px;  /* Bordes redondeados */
+    border-bottom-left-radius: 30px; /* Bordes redondeados */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen que debe estar en medio de las dos secciones */
+.auth-container__left .center-image {
+    position: absolute;
+    top: 50%; /* Posiciona la imagen a mitad de la sección izquierda */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(45%, -50%); /* Centrado perfecto */
+    max-width: 60%; /* Tamaño ajustado */
+    height: auto; /* Mantener la proporción de la imagen */
+    z-index: 1; /* Imagen encima del fondo azul */
+}
+
+/* Contenido de la sección izquierda */
+.auth-container__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.auth-container__logo {
+    width: 120px;
+    margin: 20px 0;
+}
+
+.auth-container__description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.auth-container__brand {
+    font-weight: bold;
+}
+
+/* Sección derecha */
+.auth-container__right {
+    background: #f0f0f0;
+    padding: 40px;
+    flex: 1;
+    position: relative;
+    border-top-right-radius: 30px; /* Bordes redondeados */
+    border-bottom-right-radius: 30px; /* Bordes redondeados */
+    overflow: hidden;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__group {
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Color de borde por defecto */
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Transición para la animación */
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.5s forwards;
+}
+
+/* Efecto cuando el campo tiene focus (cursor dentro) */
+.form__input:focus {
+    border-color: #00ffff; /* Borde neón azul */
+    box-shadow: 0 0 10px #00ffff; /* Efecto de neón azul */
+    transform: scale(1.05); /* Animación de pequeño aumento de tamaño */
+}
+
+/* Etiqueta de formulario */
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__error {
+    color: red;
+    font-size: 12px;
+    display: none;
+    opacity: 0;
+    animation: showError 0.5s ease-out forwards;
+}
+
+.general-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 20px;
+    display: none;
+    opacity: 0;
+    animation: showError 0.5s ease-out forwards;
+}
+
+/* Animación de mensaje de error */
+@keyframes showError {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Botón de envío */
+.form__button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados en el botón */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 1s forwards;
+}
+
+.form__button:hover {
+    background: #0056b3;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para cuando el formulario es exitoso */
+.success-message {
+    color: green;
+    font-size: 14px;
+    display: none;
+    opacity: 0;
+    animation: showError 0.5s ease-out forwards;
+}
